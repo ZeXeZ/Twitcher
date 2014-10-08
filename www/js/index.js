@@ -34,10 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
      
-     navigator.geolocation.getCurrentPosition(onSuccess, onError);
+     navigator.geolocation.getCurrentPosition(app.onSuccess, onError);
     },
     
     onSuccess: function(position) {
+    
     	var longitude = position.coords.longitude;
     	var latitude = position.coords.latitude;
     	var latLong = new google.map.LatLng(latitude, longitude);
